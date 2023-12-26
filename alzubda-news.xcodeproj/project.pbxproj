@@ -22,10 +22,12 @@
 		C58DDDA72B33F67200FA066C /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA62B33F67200FA066C /* AppStoryboard.swift */; };
 		C58DDDAA2B33F6D000FA066C /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA92B33F6D000FA066C /* CoreDataService.swift */; };
 		C58DDDAD2B33F73400FA066C /* CategorySelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */; };
-		C58DDDB02B33F75200FA066C /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */; };
+		C58DDDB02B33F75200FA066C /* CategorySelectionViewStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDAF2B33F75200FA066C /* CategorySelectionViewStoryboard.swift */; };
 		C58DDDB22B33FD7C00FA066C /* CategorySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */; };
 		C58DDDB52B341EFB00FA066C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C58DDDB42B341EFB00FA066C /* Alamofire */; };
 		C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */; };
+		C58DDDBB2B3AE70200FA066C /* CategorySelectionViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */; };
+		C58DDDBD2B3AEF8000FA066C /* CategorySelectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +67,12 @@
 		C58DDDA62B33F67200FA066C /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		C58DDDA92B33F6D000FA066C /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySelection.storyboard; sourceTree = "<group>"; };
-		C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
+		C58DDDAF2B33F75200FA066C /* CategorySelectionViewStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewStoryboard.swift; sourceTree = "<group>"; };
 		C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewCell.swift; sourceTree = "<group>"; };
 		C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
+		C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewService.swift; sourceTree = "<group>"; };
+		C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionProtocol.swift; sourceTree = "<group>"; };
+		C58DDDBE2B3B2A5300FA066C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 				C58DDD6A2B33F4F300FA066C /* alzubda-news */,
 				C58DDD842B33F4F500FA066C /* alzubda-newsTests */,
 				C58DDD8E2B33F4F500FA066C /* alzubda-newsUITests */,
+				C58DDDBE2B3B2A5300FA066C /* README.md */,
 				C58DDD692B33F4F300FA066C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,8 +202,9 @@
 		C58DDDAB2B33F71600FA066C /* categorySelection */ = {
 			isa = PBXGroup;
 			children = (
+				C58DDDC02B3B2AEB00FA066C /* storyboard */,
+				C58DDDBF2B3B2AE300FA066C /* service */,
 				C58DDDAE2B33F74100FA066C /* viewController */,
-				C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */,
 			);
 			path = categorySelection;
 			sourceTree = "<group>";
@@ -205,11 +212,28 @@
 		C58DDDAE2B33F74100FA066C /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */,
-				C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */,
 				C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		C58DDDBF2B3B2AE300FA066C /* service */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */,
+				C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		C58DDDC02B3B2AEB00FA066C /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */,
+				C58DDDAF2B33F75200FA066C /* CategorySelectionViewStoryboard.swift */,
+				C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */,
+			);
+			path = storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,10 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58DDD762B33F4F300FA066C /* alzubda_news.xcdatamodeld in Sources */,
+				C58DDDBD2B3AEF8000FA066C /* CategorySelectionProtocol.swift in Sources */,
 				C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */,
-				C58DDDB02B33F75200FA066C /* CategorySelectionView.swift in Sources */,
+				C58DDDB02B33F75200FA066C /* CategorySelectionViewStoryboard.swift in Sources */,
 				C58DDDA72B33F67200FA066C /* AppStoryboard.swift in Sources */,
 				C58DDD702B33F4F300FA066C /* ViewController.swift in Sources */,
+				C58DDDBB2B3AE70200FA066C /* CategorySelectionViewService.swift in Sources */,
 				C58DDDA42B33F62C00FA066C /* CodableExtension.swift in Sources */,
 				C58DDDB22B33FD7C00FA066C /* CategorySelectionViewCell.swift in Sources */,
 				C58DDDAA2B33F6D000FA066C /* CoreDataService.swift in Sources */,

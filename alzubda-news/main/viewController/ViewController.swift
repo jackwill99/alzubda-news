@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func goToSelection() {
-//        let categorySelectionVC = CategorySelectionView.getController(to: .CategorySelection)
+//        let categorySelectionVS = CategorySelectionViewStoryboard.getController(to: .CategorySelection)
 //
-//        categorySelectionVC.modalPresentationStyle = .fullScreen
-//        present(categorySelectionVC, animated: true)
-        let categorySelectionVC = CategorySelectionViewController.getController(to: .CategorySelection)
+//        categorySelectionVS.modalPresentationStyle = .fullScreen
+//        present(categorySelectionVS, animated: true)
+
+        let categorySelectionVC = CategorySelectionViewController()
 
         categorySelectionVC.modalPresentationStyle = .fullScreen
         present(categorySelectionVC, animated: true)

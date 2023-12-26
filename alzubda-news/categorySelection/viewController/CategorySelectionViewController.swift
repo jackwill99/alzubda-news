@@ -9,13 +9,18 @@ import UIKit
 
 class CategorySelectionViewController: UIViewController {
     var viewContainer: UIStackView!
+    // navigation bar
     var navigationBar: UIStackView!
-    var categoriesCollectionView: UICollectionView!
-    var confirmBtn: UIButton!
     var counterView: UIView!
     var counterLabel: UILabel!
+    var backButton: UIButton!
+    var bottomNavBar: UIStackView!
+    // categories collection
+    var categoriesCollectionView: UICollectionView!
+    // confirm
+    var confirmBtn: UIButton!
 
-    var selectedIndex: [Int] = []
+    let service = CategorySelectionViewService()
 
     var getWidth: CGFloat {
         return (view.frame.size.width - 60)/3
@@ -25,6 +30,8 @@ class CategorySelectionViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1)
+
+        // Build UIView
         build()
     }
 
@@ -69,7 +76,7 @@ class CategorySelectionViewController: UIViewController {
     // MARK: - Navigation Back Button
 
     private func buildNavBackButton() {
-        let backButton = UIButton()
+        backButton = UIButton()
         backButton.tintColor = .lightGray
         var configuration = UIButton.Configuration.plain()
 //            configuration.title = "Back"
@@ -89,7 +96,7 @@ class CategorySelectionViewController: UIViewController {
     // MARK: - Navigation Bottom View
 
     private func buildNavBottomView() {
-        let bottomNavBar = UIStackView()
+        bottomNavBar = UIStackView()
         bottomNavBar.axis = .horizontal
         bottomNavBar.spacing = 20
         navigationBar.addArrangedSubview(bottomNavBar)
@@ -179,30 +186,17 @@ extension CategorySelectionViewController: UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let category = collectionView.dequeueReusableCell(withReuseIdentifier: "CategorySelectionCell", for: indexPath) as! CategorySelectionCell
         category.addImgConstraint(width: getWidth)
+        service.changeCollectionCell(true, category, indexPath.row)
+
         return category
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let category = collectionView.cellForItem(at: indexPath) as? CategorySelectionCell else { return }
 
-        changeCollectionCell(category, indexPath.row)
+        service.changeCollectionCell(false, category, indexPath.row)
 
-        let count = counterLabel.text!.split(separator: "/")
-        if Int(count[1]) != nil {
-            counterLabel.text = count[0] + "/" + String(selectedIndex.count)
-        }
-    }
-
-    private func changeCollectionCell(_ category: CategorySelectionCell, _ index: Int) {
-        if selectedIndex.contains(index) {
-            category.checkMark.isHidden = true
-            category.overlayView.isHidden = true
-            selectedIndex.removeAll(where: { $0 == index })
-        } else {
-            category.checkMark.isHidden = false
-            category.overlayView.isHidden = false
-            selectedIndex.append(index)
-        }
+        service.addLabelCount(lbl: counterLabel)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -212,11 +206,11 @@ extension CategorySelectionViewController: UICollectionViewDelegate, UICollectio
 
 // MARK: - Category Selection Cell
 
-class CategorySelectionCell: UICollectionViewCell {
+class CategorySelectionCell: UICollectionViewCell, CategorySelectionCellProtocol {
     // uiviews
     var lblTitle: UILabel!
     var img: UIImageView!
-    var overlayView: UIView!
+    var overlay: UIView!
     var checkMark: UIImageView!
 
     // initWithFrame to init view from code
@@ -248,10 +242,10 @@ class CategorySelectionCell: UICollectionViewCell {
     }
 
     private func buildOverlayView() {
-        overlayView = UIView()
-        overlayView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
-        overlayView.layer.cornerRadius = 15
-        overlayView.isHidden = true
+        overlay = UIView()
+        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+        overlay.layer.cornerRadius = 15
+        overlay.isHidden = true
     }
 
     private func buildCheckMarkView() {
@@ -294,13 +288,13 @@ class CategorySelectionCell: UICollectionViewCell {
         ])
 
         buildOverlayView()
-        addSubview(overlayView)
-        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(overlay)
+        overlay.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            overlayView.topAnchor.constraint(equalTo: topAnchor),
-            overlayView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            overlayView.leftAnchor.constraint(equalTo: leftAnchor),
-            overlayView.rightAnchor.constraint(equalTo: rightAnchor)
+            overlay.topAnchor.constraint(equalTo: topAnchor),
+            overlay.bottomAnchor.constraint(equalTo: bottomAnchor),
+            overlay.leftAnchor.constraint(equalTo: leftAnchor),
+            overlay.rightAnchor.constraint(equalTo: rightAnchor)
         ])
 
         buildCheckMarkView()

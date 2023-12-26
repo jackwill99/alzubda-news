@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategorySelectionViewCell: UICollectionViewCell {
+class CategorySelectionViewCell: UICollectionViewCell, CategorySelectionCellProtocol {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var img: UIImageView!
     @IBOutlet var overlay: UIView!
