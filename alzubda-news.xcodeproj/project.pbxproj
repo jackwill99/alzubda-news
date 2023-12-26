@@ -17,6 +17,15 @@
 		C58DDD862B33F4F500FA066C /* alzubda_newsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDD852B33F4F500FA066C /* alzubda_newsTests.swift */; };
 		C58DDD902B33F4F500FA066C /* alzubda_newsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDD8F2B33F4F500FA066C /* alzubda_newsUITests.swift */; };
 		C58DDD922B33F4F500FA066C /* alzubda_newsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDD912B33F4F500FA066C /* alzubda_newsUITestsLaunchTests.swift */; };
+		C58DDDA22B33F59700FA066C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA12B33F59700FA066C /* ViewControllerExtension.swift */; };
+		C58DDDA42B33F62C00FA066C /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA32B33F62C00FA066C /* CodableExtension.swift */; };
+		C58DDDA72B33F67200FA066C /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA62B33F67200FA066C /* AppStoryboard.swift */; };
+		C58DDDAA2B33F6D000FA066C /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDA92B33F6D000FA066C /* CoreDataService.swift */; };
+		C58DDDAD2B33F73400FA066C /* CategorySelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */; };
+		C58DDDB02B33F75200FA066C /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */; };
+		C58DDDB22B33FD7C00FA066C /* CategorySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */; };
+		C58DDDB52B341EFB00FA066C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C58DDDB42B341EFB00FA066C /* Alamofire */; };
+		C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,14 @@
 		C58DDD8B2B33F4F500FA066C /* alzubda-newsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alzubda-newsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58DDD8F2B33F4F500FA066C /* alzubda_newsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alzubda_newsUITests.swift; sourceTree = "<group>"; };
 		C58DDD912B33F4F500FA066C /* alzubda_newsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alzubda_newsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C58DDDA12B33F59700FA066C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		C58DDDA32B33F62C00FA066C /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		C58DDDA62B33F67200FA066C /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		C58DDDA92B33F6D000FA066C /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySelection.storyboard; sourceTree = "<group>"; };
+		C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
+		C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewCell.swift; sourceTree = "<group>"; };
+		C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58DDDB52B341EFB00FA066C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +119,16 @@
 		C58DDD6A2B33F4F300FA066C /* alzubda-news */ = {
 			isa = PBXGroup;
 			children = (
+				C58DDDAB2B33F71600FA066C /* categorySelection */,
+				C58DDDA82B33F6BE00FA066C /* coreData */,
+				C58DDDA52B33F66100FA066C /* ui */,
+				C58DDDA02B33F57E00FA066C /* extension */,
+				C58DDD9E2B33F55B00FA066C /* main */,
 				C58DDD6B2B33F4F300FA066C /* AppDelegate.swift */,
 				C58DDD6D2B33F4F300FA066C /* SceneDelegate.swift */,
-				C58DDD6F2B33F4F300FA066C /* ViewController.swift */,
-				C58DDD712B33F4F300FA066C /* Main.storyboard */,
 				C58DDD772B33F4F500FA066C /* Assets.xcassets */,
 				C58DDD792B33F4F500FA066C /* LaunchScreen.storyboard */,
 				C58DDD7C2B33F4F500FA066C /* Info.plist */,
-				C58DDD742B33F4F300FA066C /* alzubda_news.xcdatamodeld */,
 			);
 			path = "alzubda-news";
 			sourceTree = "<group>";
@@ -130,6 +150,68 @@
 			path = "alzubda-newsUITests";
 			sourceTree = "<group>";
 		};
+		C58DDD9E2B33F55B00FA066C /* main */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDD9F2B33F56E00FA066C /* viewController */,
+				C58DDD712B33F4F300FA066C /* Main.storyboard */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		C58DDD9F2B33F56E00FA066C /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDD6F2B33F4F300FA066C /* ViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		C58DDDA02B33F57E00FA066C /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDA12B33F59700FA066C /* ViewControllerExtension.swift */,
+				C58DDDA32B33F62C00FA066C /* CodableExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		C58DDDA52B33F66100FA066C /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDA62B33F67200FA066C /* AppStoryboard.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C58DDDA82B33F6BE00FA066C /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDD742B33F4F300FA066C /* alzubda_news.xcdatamodeld */,
+				C58DDDA92B33F6D000FA066C /* CoreDataService.swift */,
+			);
+			path = coreData;
+			sourceTree = "<group>";
+		};
+		C58DDDAB2B33F71600FA066C /* categorySelection */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDAE2B33F74100FA066C /* viewController */,
+				C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */,
+			);
+			path = categorySelection;
+			sourceTree = "<group>";
+		};
+		C58DDDAE2B33F74100FA066C /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				C58DDDAF2B33F75200FA066C /* CategorySelectionView.swift */,
+				C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */,
+				C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +228,9 @@
 			dependencies = (
 			);
 			name = "alzubda-news";
+			packageProductDependencies = (
+				C58DDDB42B341EFB00FA066C /* Alamofire */,
+			);
 			productName = "alzubda-news";
 			productReference = C58DDD682B33F4F300FA066C /* alzubda-news.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +303,9 @@
 				Base,
 			);
 			mainGroup = C58DDD5F2B33F4F300FA066C;
+			packageReferences = (
+				C58DDDB32B341EFA00FA066C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C58DDD692B33F4F300FA066C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,6 +325,7 @@
 				C58DDD7B2B33F4F500FA066C /* LaunchScreen.storyboard in Resources */,
 				C58DDD782B33F4F500FA066C /* Assets.xcassets in Resources */,
 				C58DDD732B33F4F300FA066C /* Main.storyboard in Resources */,
+				C58DDDAD2B33F73400FA066C /* CategorySelection.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58DDD762B33F4F300FA066C /* alzubda_news.xcdatamodeld in Sources */,
+				C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */,
+				C58DDDB02B33F75200FA066C /* CategorySelectionView.swift in Sources */,
+				C58DDDA72B33F67200FA066C /* AppStoryboard.swift in Sources */,
 				C58DDD702B33F4F300FA066C /* ViewController.swift in Sources */,
+				C58DDDA42B33F62C00FA066C /* CodableExtension.swift in Sources */,
+				C58DDDB22B33FD7C00FA066C /* CategorySelectionViewCell.swift in Sources */,
+				C58DDDAA2B33F6D000FA066C /* CoreDataService.swift in Sources */,
 				C58DDD6C2B33F4F300FA066C /* AppDelegate.swift in Sources */,
 				C58DDD6E2B33F4F300FA066C /* SceneDelegate.swift in Sources */,
+				C58DDDA22B33F59700FA066C /* ViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +550,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +558,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackwill.alzubda-news";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,6 +582,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +590,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackwill.alzubda-news";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,6 +715,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C58DDDB32B341EFA00FA066C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C58DDDB42B341EFB00FA066C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C58DDDB32B341EFA00FA066C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C58DDD742B33F4F300FA066C /* alzubda_news.xcdatamodeld */ = {
