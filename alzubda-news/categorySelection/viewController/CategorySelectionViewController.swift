@@ -91,6 +91,12 @@ class CategorySelectionViewController: UIViewController {
         backButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
         navigationBar.addArrangedSubview(backButton)
+
+        backButton.addTarget(self, action: #selector(onPressedBack), for: .touchUpInside)
+    }
+
+    @objc func onPressedBack(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 
     // MARK: - Navigation Bottom View

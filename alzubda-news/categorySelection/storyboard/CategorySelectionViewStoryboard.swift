@@ -28,6 +28,10 @@ class CategorySelectionViewStoryboard: UIViewController {
         btnConfirm.layer.cornerRadius = 10
         selectCountView.layer.cornerRadius = 10
     }
+
+    @IBAction func onPressedBack() {
+        dismiss(animated: true)
+    }
 }
 
 extension CategorySelectionViewStoryboard: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
