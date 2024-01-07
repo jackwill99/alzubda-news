@@ -21,7 +21,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func setup() {
-        let home = createNav(with: "Home", and: UIImage(systemName: "house"), vc: MainViewController())
+        let homeView = HomeViewStoryboard.getController(to: .Home)
+        let home = createNav(with: "Home", and: UIImage(systemName: "house"), vc: homeView)
         
         let history = createNav(with: "History", and: UIImage(systemName: "clock"), vc: T1ViewController())
         
