@@ -7,6 +7,10 @@
 
 import UIKit
 
-class HomeViewCollectionCell: UICollectionViewCell {
+class HomeCategoryViewCollectionCell: UICollectionViewCell {
     @IBOutlet var lblText: UILabel!
+}
+
+class HomeStoryViewCollectionCell: UICollectionViewCell {
+    @IBOutlet var imgStory: UIImageView!
 }

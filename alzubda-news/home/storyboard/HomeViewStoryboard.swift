@@ -11,6 +11,7 @@ class HomeViewStoryboard: UIViewController {
     @IBOutlet var categoriesSlider: UIView!
     @IBOutlet var countryStackView: UIStackView!
     @IBOutlet var categoriesCollection: UICollectionView!
+    @IBOutlet var storiesCollection: UICollectionView!
 
     var service: HomeViewService!
 
@@ -21,6 +22,10 @@ class HomeViewStoryboard: UIViewController {
         categoriesCollection.delegate = self
         categoriesCollection.dataSource = self
         categoriesCollection.showsHorizontalScrollIndicator = false
+
+        storiesCollection.delegate = self
+        storiesCollection.dataSource = self
+        storiesCollection.showsHorizontalScrollIndicator = false
 
         navigationController?.isNavigationBarHidden = true
         categoriesSlider.layer.cornerRadius = 6
@@ -38,14 +43,28 @@ class HomeViewStoryboard: UIViewController {
 
 extension HomeViewStoryboard: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return service.getCategoriesList.count
+        if collectionView == categoriesCollection {
+            return service.getCategoriesList.count
+        } else {
+            return service.getStoriesList.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let category = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCollectionCell", for: indexPath) as! HomeViewCollectionCell
+        if collectionView == categoriesCollection {
+            let category = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCategoryViewCollectionCell", for: indexPath) as! HomeCategoryViewCollectionCell
 
-        category.lblText.text = service.getCategoriesList[indexPath.row]
-        category.layer.cornerRadius = 10
-        return category
+            category.lblText.text = service.getCategoriesList[indexPath.row]
+            category.layer.cornerRadius = 10
+            return category
+        } else {
+            let story = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeStoryViewCollectionCell", for: indexPath) as! HomeStoryViewCollectionCell
+
+            story.imgStory.image = UIImage(systemName: service.getStoriesList[indexPath.row])
+            story.layer.masksToBounds = true
+            story.layer.cornerRadius = story.layer.frame.width / 2
+
+            return story
+        }
     }
 }

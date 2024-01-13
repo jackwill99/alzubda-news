@@ -16,13 +16,21 @@ class HomeViewService {
     }
 
     private var isDoneCategorySelection = true
+
     private var categoriesList: [String] = [
         "hi", "hee", "haha", "dsfwefw",
         "hi", "hee", "haha", "dsfwefw"
     ]
-
     public var getCategoriesList: [String] {
         return categoriesList
+    }
+
+    private var storiesList: [String] = [
+        "magnifyingglass", "swift", "swiftdata", "visionpro.fill",
+        "camera.macro", "quote.bubble.fill", "shareplay", "figure.walk"
+    ]
+    public var getStoriesList: [String] {
+        return storiesList
     }
 
     public func showCategorySelectionView() {
