@@ -12,6 +12,7 @@ class HomeViewStoryboard: UIViewController {
     @IBOutlet var countryStackView: UIStackView!
     @IBOutlet var categoriesCollection: UICollectionView!
     @IBOutlet var storiesCollection: UICollectionView!
+    @IBOutlet var newsCollection: UICollectionView!
 
     var service: HomeViewService!
 
@@ -26,6 +27,10 @@ class HomeViewStoryboard: UIViewController {
         storiesCollection.delegate = self
         storiesCollection.dataSource = self
         storiesCollection.showsHorizontalScrollIndicator = false
+
+        newsCollection.delegate = self
+        newsCollection.dataSource = self
+        newsCollection.showsHorizontalScrollIndicator = false
 
         navigationController?.isNavigationBarHidden = true
         categoriesSlider.layer.cornerRadius = 6
@@ -45,26 +50,53 @@ extension HomeViewStoryboard: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoriesCollection {
             return service.getCategoriesList.count
-        } else {
+        } else if collectionView == storiesCollection {
             return service.getStoriesList.count
+        } else {
+            print("15")
+            return 15
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoriesCollection {
+            print("first")
             let category = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCategoryViewCollectionCell", for: indexPath) as! HomeCategoryViewCollectionCell
 
             category.lblText.text = service.getCategoriesList[indexPath.row]
             category.layer.cornerRadius = 10
             return category
-        } else {
+        } else if collectionView == storiesCollection {
+            print("second")
             let story = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeStoryViewCollectionCell", for: indexPath) as! HomeStoryViewCollectionCell
 
             story.imgStory.image = UIImage(systemName: service.getStoriesList[indexPath.row])
+
+            story.layer.cornerRadius = 45
             story.layer.masksToBounds = true
-            story.layer.cornerRadius = story.layer.frame.width / 2
+            story.imgStory.layer.masksToBounds = true
+            story.clipsToBounds = true
 
             return story
+        } else {
+            print("new \(view.frame.width - 40)")
+            let news = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNewsViewCollectionCell", for: indexPath) as! HomeNewsViewCollectionCell
+            news.uiview.widthAnchor.constraint(equalToConstant: view.frame.width - 40).isActive = true
+
+            news.uiview.layer.cornerRadius = 15
+            news.imgNews.layer.cornerRadius = 10
+//            category.lblText.text = service.getCategoriesList[indexPath.row]
+
+            return news
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        /// For newsCollection, don't need to resize the collectionview if there is stackView in ContentView of CollectionCell
+        /// No, I used UIView in ContentView of CollectionCell, so tells the size of the frame when rendering
+        if collectionView == newsCollection {
+            return CGSize(width: view.frame.width - 40, height: 150)
+        }
+        return collectionView.frame.size
     }
 }

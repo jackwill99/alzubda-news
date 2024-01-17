@@ -14,3 +14,12 @@ class HomeCategoryViewCollectionCell: UICollectionViewCell {
 class HomeStoryViewCollectionCell: UICollectionViewCell {
     @IBOutlet var imgStory: UIImageView!
 }
+
+class HomeNewsViewCollectionCell: UICollectionViewCell {
+    @IBOutlet var uiview: UIView!
+
+    @IBOutlet var imgNews: UIImageView!
+    @IBOutlet var creator: UILabel!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var excerpt: UILabel!
+}
