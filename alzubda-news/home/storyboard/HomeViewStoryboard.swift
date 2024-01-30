@@ -60,14 +60,12 @@ extension HomeViewStoryboard: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoriesCollection {
-            print("first")
             let category = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCategoryViewCollectionCell", for: indexPath) as! HomeCategoryViewCollectionCell
 
             category.lblText.text = service.getCategoriesList[indexPath.row]
             category.layer.cornerRadius = 10
             return category
         } else if collectionView == storiesCollection {
-            print("second")
             let story = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeStoryViewCollectionCell", for: indexPath) as! HomeStoryViewCollectionCell
 
             story.imgStory.image = UIImage(systemName: service.getStoriesList[indexPath.row])
@@ -79,13 +77,13 @@ extension HomeViewStoryboard: UICollectionViewDataSource, UICollectionViewDelega
 
             return story
         } else {
-            print("new \(view.frame.width - 40)")
             let news = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNewsViewCollectionCell", for: indexPath) as! HomeNewsViewCollectionCell
+
+            /// In  UICollectionView, the UICollectionViewCell must have the static width or dynamic width based on the devices. Otherwise, UILabel can't wrap
             news.uiview.widthAnchor.constraint(equalToConstant: view.frame.width - 40).isActive = true
 
             news.uiview.layer.cornerRadius = 15
             news.imgNews.layer.cornerRadius = 10
-//            category.lblText.text = service.getCategoriesList[indexPath.row]
 
             return news
         }
@@ -93,7 +91,7 @@ extension HomeViewStoryboard: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         /// For newsCollection, don't need to resize the collectionview if there is stackView in ContentView of CollectionCell
-        /// No, I used UIView in ContentView of CollectionCell, so tells the size of the frame when rendering
+        /// Now, I used UIView in ContentView of CollectionCell, so tells the size of the frame when rendering
         if collectionView == newsCollection {
             return CGSize(width: view.frame.width - 40, height: 150)
         }

@@ -17,3 +17,10 @@ class CategorySelectionViewCell: UICollectionViewCell, CategorySelectionCellProt
         lblTitle.text = title
     }
 }
+
+protocol CategorySelectionCellProtocol {
+    var lblTitle: UILabel! { get set }
+    var img: UIImageView! { get set }
+    var overlay: UIView! { get set }
+    var checkMark: UIImageView! { get set }
+}

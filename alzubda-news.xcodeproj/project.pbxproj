@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C58A2FDD2B621D370032C629 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2FDC2B621D370032C629 /* HomeViewController.swift */; };
 		C58DDD6C2B33F4F300FA066C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDD6B2B33F4F300FA066C /* AppDelegate.swift */; };
 		C58DDD6E2B33F4F300FA066C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDD6D2B33F4F300FA066C /* SceneDelegate.swift */; };
 		C58DDD732B33F4F300FA066C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58DDD712B33F4F300FA066C /* Main.storyboard */; };
@@ -26,7 +27,6 @@
 		C58DDDB52B341EFB00FA066C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C58DDDB42B341EFB00FA066C /* Alamofire */; };
 		C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */; };
 		C58DDDBB2B3AE70200FA066C /* CategorySelectionViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */; };
-		C58DDDBD2B3AEF8000FA066C /* CategorySelectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */; };
 		C58DDDC32B3FB26500FA066C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDC22B3FB26500FA066C /* TabBarController.swift */; };
 		C58DDDC52B3FCD1600FA066C /* T1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDC42B3FCD1600FA066C /* T1ViewController.swift */; };
 		C58DDDC92B3FCD3600FA066C /* T3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58DDDC82B3FCD3600FA066C /* T3ViewController.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C58A2FDC2B621D370032C629 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C58DDD682B33F4F300FA066C /* alzubda-news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alzubda-news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58DDD6B2B33F4F300FA066C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58DDD6D2B33F4F300FA066C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewCell.swift; sourceTree = "<group>"; };
 		C58DDDB62B34799E00FA066C /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewService.swift; sourceTree = "<group>"; };
-		C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionProtocol.swift; sourceTree = "<group>"; };
 		C58DDDBE2B3B2A5300FA066C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C58DDDC22B3FB26500FA066C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C58DDDC42B3FCD1600FA066C /* T1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T1ViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 		C58DDDBF2B3B2AE300FA066C /* service */ = {
 			isa = PBXGroup;
 			children = (
+				C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */,
 				C58DDDBA2B3AE70200FA066C /* CategorySelectionViewService.swift */,
-				C58DDDBC2B3AEF8000FA066C /* CategorySelectionProtocol.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -234,7 +234,6 @@
 		C58DDDC02B3B2AEB00FA066C /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				C58DDDB12B33FD7C00FA066C /* CategorySelectionViewCell.swift */,
 				C58DDDAF2B33F75200FA066C /* CategorySelectionViewStoryboard.swift */,
 				C58DDDAC2B33F73400FA066C /* CategorySelection.storyboard */,
 			);
@@ -267,7 +266,6 @@
 		C58DDDCB2B4175EC00FA066C /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				C5FDFD452B4AA7C7002B0525 /* HomeViewCollectionCell.swift */,
 				C58DDDD02B41764300FA066C /* HomeViewStoryboard.swift */,
 				C58DDDCE2B41762500FA066C /* Home.storyboard */,
 			);
@@ -277,6 +275,7 @@
 		C58DDDCC2B4175F300FA066C /* service */ = {
 			isa = PBXGroup;
 			children = (
+				C5FDFD452B4AA7C7002B0525 /* HomeViewCollectionCell.swift */,
 				C5FDFD432B4A88BF002B0525 /* HomeViewService.swift */,
 			);
 			path = service;
@@ -285,6 +284,7 @@
 		C58DDDCD2B4175FC00FA066C /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				C58A2FDC2B621D370032C629 /* HomeViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -430,7 +430,6 @@
 			files = (
 				C58DDD762B33F4F300FA066C /* alzubda_news.xcdatamodeld in Sources */,
 				C5FDFD442B4A88BF002B0525 /* HomeViewService.swift in Sources */,
-				C58DDDBD2B3AEF8000FA066C /* CategorySelectionProtocol.swift in Sources */,
 				C58DDDC92B3FCD3600FA066C /* T3ViewController.swift in Sources */,
 				C58DDDB72B34799E00FA066C /* CategorySelectionViewController.swift in Sources */,
 				C58DDDB02B33F75200FA066C /* CategorySelectionViewStoryboard.swift in Sources */,
@@ -443,6 +442,7 @@
 				C58DDDB22B33FD7C00FA066C /* CategorySelectionViewCell.swift in Sources */,
 				C58DDDAA2B33F6D000FA066C /* CoreDataService.swift in Sources */,
 				C58DDD6C2B33F4F300FA066C /* AppDelegate.swift in Sources */,
+				C58A2FDD2B621D370032C629 /* HomeViewController.swift in Sources */,
 				C58DDDC32B3FB26500FA066C /* TabBarController.swift in Sources */,
 				C5FDFD462B4AA7C7002B0525 /* HomeViewCollectionCell.swift in Sources */,
 				C58DDD6E2B33F4F300FA066C /* SceneDelegate.swift in Sources */,
